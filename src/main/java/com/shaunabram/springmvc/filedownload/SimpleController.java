@@ -21,19 +21,19 @@ public class SimpleController {
     }
 
     @RequestMapping(value = "/Excel", method = RequestMethod.GET)
-    public void handleFileDownload(HttpServletResponse response) {
+    public void handleFileDownload(HttpServletResponse res) {
         try {
-            String fileName = "/Test.xls";
-            URL url = getClass().getResource(fileName);
-            File file = new File(url.toURI());
-            System.out.println("Loading file " + fileName + " (" + file.getAbsolutePath() + ")");
-            if (file.exists()) {
-                response.setContentType("application/xls");
-                response.setContentLength(new Long(file.length()).intValue());
-                response.setHeader("Content-Disposition","attachment; filename=Test.xls");
-                FileCopyUtils.copy(new FileInputStream(file), response.getOutputStream());
+            String fn = "/Test.xls";
+            URL url = getClass().getResource(fn);
+            File f = new File(url.toURI());
+            System.out.println("Loading file "+fn+"("+f.getAbsolutePath()+")");
+            if (f.exists()) {
+                res.setContentType("application/xls");
+                res.setContentLength(new Long(f.length()).intValue());
+                res.setHeader("Content-Disposition", "attachment; filename=Test.xls");
+                FileCopyUtils.copy(new FileInputStream(f), res.getOutputStream());
             } else {
-                System.out.println("File " + fileName + " (" + file.getAbsolutePath() + ") does not exist");
+                System.out.println("File"+fn+"("+f.getAbsolutePath()+") does not exist");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
