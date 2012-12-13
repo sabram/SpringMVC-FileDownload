@@ -1,9 +1,5 @@
-A simple SpringMVC HelloWorld app.
-A Html/JSP/JavaScript client, talks to a Spring-DI enabled server with a simplistic Controller/Service/DAO design.
-The app is tested using JUnit, FEST assertions and Selenium.
-The app's functionality is deliberately simplistic, but is useful as a template to bootstrap more complex apps.
-
-
-
-This file was modified by IntelliJ IDEA 11.1.3 for binding GitHub repository
-This file was modified by IntelliJ IDEA 11.1.3 for binding GitHub repository
+Example project showing how to download a file using Spring MVC.
+For example, you have a SpringMVC web app and you want to include a
+link on a page that downloads a file to be opened on the user’s
+machine (e.g. a Microsoft Excel).
+Blog post: http://www.shaunabram.com/springmvc-file-download
